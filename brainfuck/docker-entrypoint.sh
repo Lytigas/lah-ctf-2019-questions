@@ -7,9 +7,9 @@ ACCESS_LOG=${ACCESS_LOG:--}
 ERROR_LOG=${ERROR_LOG:--}
 
 # Start CTFd
-echo "Starting regexer"
-exec gunicorn 'regexer:app' \
-    --bind "0.0.0.0:8796" \
+echo "Starting brainfucker"
+exec gunicorn 'brainfuck_server:app' \
+    --bind "0.0.0.0:9183" \
     --workers $WORKERS \
     --worker-class "$WORKER_CLASS" \
     --access-logfile "$ACCESS_LOG" \
