@@ -11,15 +11,6 @@ RUN pip install -r requirements.txt
 
 COPY . /opt/regexer
 
-VOLUME ["/opt/regexer"]
-
-RUN for d in CTFd/plugins/*; do \
-      if [ -f "$d/requirements.txt" ]; then \
-        pip install -r $d/requirements.txt; \
-      fi; \
-    done;
-
-
 EXPOSE 8796
 
 ENTRYPOINT ["/opt/regexer/docker-entrypoint.sh"]
